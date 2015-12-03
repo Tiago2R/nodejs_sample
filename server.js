@@ -17,8 +17,12 @@ mongoose.connection.on('error', function(err){console.log(err);});
 
 // router
 var router = express.Router();
-                       
+router.get('/', function(req, res) {
+    res.json({message:'API is running!'});
+});
+
 // launch application
+app.use('/', router);
 app.listen(port);
 
-console.log("Hello World!")
+console.log("Hello World!");
