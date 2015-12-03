@@ -1,0 +1,11 @@
+{
+    "name": "nodejs-sample",
+    "version": "1.0",
+    "description": "An sample to illustrate the usage of node.js",
+    "author":"Tiago Ribeiro",
+    "dependencies": {
+        "express":"~4.0.0",
+        "mongoose":"",
+        "body-parser":"~1.0.1"
+    }
+}
