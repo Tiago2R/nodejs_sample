@@ -33,6 +33,20 @@ router.route('/articles')
 
             res.json(articles);
         });
+    })
+
+    .post(function(req, res) {
+        var article = Article();
+        article.title = req.body.title;
+        article.body = req.body.body;
+    
+        article.save(function(err) {
+            if(err) {
+                res.send(err);
+            }
+            
+            res.json(article);
+        });
     });
 
 // launch application
