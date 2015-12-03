@@ -36,7 +36,7 @@ router.route('/articles')
     })
 
     .post(function(req, res) {
-        var article = Article();
+        var article = new Article();
         article.title = req.body.title;
         article.body = req.body.body;
     
@@ -48,6 +48,17 @@ router.route('/articles')
             res.json(article);
         });
     });
+
+router.route('/articles/:article_id')
+    .get(function(req, res) {
+        Article.findById(req.params.article_id , function(err, articles) {
+            if(err) {
+                res.send(err);
+            }
+
+            res.json(articles);
+        });
+    })
 
 // launch application
 app.use('/api', router);
